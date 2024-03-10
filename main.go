@@ -1,6 +1,5 @@
 /*
-Copyright © 2024 NAME HERE <EMAIL ADDRESS>
-
+Copyright © 2024 Cloud Parallax (Pvt) Ltd <opensource@cloudparallax.com>
 */
 package main
 
