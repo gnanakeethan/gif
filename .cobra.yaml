@@ -1,0 +1,7 @@
+author: Cloud Parallax (Pvt) Ltd <opensource@cloudparallax.com>
+year: 2024
+license:
+  header: This file is part of CLI application Golang Impact Framework
+  text: |
+    {{ .copyright }}
+    MIT
