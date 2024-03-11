@@ -17,10 +17,10 @@ type DataModel[T any] struct {
 }
 
 type DataChild struct {
-	Pipeline []string         `json:"pipeline"`
-	Config   any              `json:"config"`
-	Defaults map[string]any   `json:"defaults"`
-	Inputs   []DataModel[any] `json:"inputs"`
+	Pipeline []string       `json:"pipeline"`
+	Config   any            `json:"config"`
+	Defaults map[string]any `json:"defaults"`
+	Inputs   []any          `json:"inputs"`
 }
 
 type Tree struct {
