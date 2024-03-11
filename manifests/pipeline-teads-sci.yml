@@ -1,22 +1,21 @@
-name: boavizta-demo
+name: pipeline-teads-sci
 description:
 tags:
 initialize:
   plugins:
-    boavizta-cpu:
-      method: BoaviztaCpuOutput
-      path: '@grnsft/if-unofficial-plugins'
+    "teads-curve":
+      path: "@grnsft/if-unofficial-plugins"
+      method: TeadsCurve
       global-config:
-        allocation: LINEAR
-        verbose: true
+        interpolation: spline
     "sum":
       path: "@grnsft/if-plugins"
       method: Sum
       global-config:
-        input-parameters:
+        input-parameters: 
           - cpu/energy
           - network/energy
-        output-parameter: energy
+        output-parameter: energy 
     "sci-m":
       path: "@grnsft/if-plugins"
       method: SciM
@@ -41,7 +40,7 @@ tree:
   children:
     child-1:
       pipeline:
-        - boavizta-cpu
+        - teads-curve
         - sum
         - sci-m
         - sci-o
@@ -56,11 +55,9 @@ tree:
         device/expected-lifespan: 94608000 # 3 years in seconds
         resources-reserved: 1
         resources-total: 8
-        cpu/number-cores: 24
-        cpu/name: Intel® Core™ i7-1185G7
       inputs:
         - timestamp: "2023-12-12T00:00:00.000Z"
-          cloud/instance-type: A1
+          instance-type: A1 
           region: uk-west
           duration: 1
           cpu/utilization: 50
@@ -68,18 +65,18 @@ tree:
         - timestamp: "2023-12-12T00:00:01.000Z"
           duration: 5
           cpu/utilization: 20
-          cloud/instance-type: A1
+          instance-type: A1 
           region: uk-west
           network/energy: 0.000001
         - timestamp: "2023-12-12T00:00:06.000Z"
           duration: 7
           cpu/utilization: 15
-          cloud/instance-type: A1
+          instance-type: A1 
           region: uk-west
           network/energy: 0.000001
         - timestamp: "2023-12-12T00:00:13.000Z"
           duration: 30
-          cloud/instance-type: A1
+          instance-type: A1 
           region: uk-west
           cpu/utilization: 15
           network/energy: 0.000001
